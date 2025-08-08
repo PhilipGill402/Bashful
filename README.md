@@ -13,12 +13,7 @@ A tiny educational Unix-style shell written in C. It reads a line, tokenizes it 
 
 ## Build
 
-### Quick build
-```bash
-gcc -g shell.c execute.c tokenizer.c input.c -o bashful
-```
-
-### With Makefile (optional)
+### With Makefile
 ```makefile
 make && ./bashful
 ```
