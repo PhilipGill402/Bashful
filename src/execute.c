@@ -29,7 +29,7 @@ int shell_cd(char** args){
 }
 
 int shell_help(char** args){
-    printf("MyShell - Built-in Commands:\n");
+    printf("Bashful - Built-in Commands:\n");
     
     int num_builtin_functions = sizeof(builtin_functions) / sizeof(builtin_functions[0]);
     for (int i = 0; i < num_builtin_functions; i++){
