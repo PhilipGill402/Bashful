@@ -1,4 +1,4 @@
-# MyShell
+# Bashful
 
 A tiny educational Unix-style shell written in C. It reads a line, tokenizes it (supports quotes), runs built-ins like `cd`, and executes external programs via `fork()+execvp()`.
 
@@ -15,42 +15,27 @@ A tiny educational Unix-style shell written in C. It reads a line, tokenizes it 
 
 ### Quick build
 ```bash
-gcc -Wall -Wextra -g shell.c execute.c tokenizer.c input.c -o myshell
+gcc -g shell.c execute.c tokenizer.c input.c -o bashful
 ```
 
 ### With Makefile (optional)
 ```makefile
-CC = gcc
-CFLAGS = -Wall -Wextra -g
-SRC = shell.c execute.c tokenizer.c input.c
-TARGET = myshell
-
-all: $(TARGET)
-$(TARGET): $(SRC)
-	$(CC) $(CFLAGS) $(SRC) -o $(TARGET)
-
-clean:
-	rm -f $(TARGET)
-```
-
-## Run
-```bash
-./myshell
+make && ./bashful
 ```
 
 Example session:
 ```
-/home/alex >> help
-MyShell - Built-in Commands:
+/home/philip >> help
+Bashful - Built-in Commands:
     cd
     help
     exit
 Use man <command> for information on external commands.
 
-/home/alex >> cd projects
-/home/alex/projects >> echo "hello world"
+/home/philip >> cd projects
+/home/philip/projects >> echo "hello world"
 hello world
-/home/alex/projects >> exit
+/home/philip/projects >> exit
 ```
 
 ## Project Layout
@@ -70,13 +55,12 @@ hello world
 ## Usage Notes
 - Use quotes for arguments containing spaces: `echo "two words"`.
 - `cd` requires a directory argument: `cd /tmp`.
-- `exit` quits the shell; you can extend it to accept an exit code.
+- `exit` quits the shell.
 
-## Extending
+## TODO
 Easy next steps:
-- Add built-ins: `pwd`, `echo`, `history`.
+- Add built-ins: `history`.
 - Support I/O redirection (`>`, `<`) and pipelines (`|`).
-- Background jobs (`&`), `jobs`, `fg`, `bg`.
 
 ## License
 MIT (or your choice). Add a `LICENSE` file if you want contributions.
