@@ -58,4 +58,4 @@ Easy next steps:
 - Support I/O redirection (`>`, `<`) and pipelines (`|`).
 
 ## License
-MIT (or your choice). Add a `LICENSE` file if you want contributions.
+MIT.
