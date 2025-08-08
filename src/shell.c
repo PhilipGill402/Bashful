@@ -4,9 +4,12 @@ int main(){
     char* line; 
     char** args;
     int status;
+    
+    char* home = getenv("HOME");
+    chdir(home);
+
     do{
         char cwd[100];
-        chdir(""); 
         printf("%s >> ", getcwd(cwd, 100));
         line = read_line();
         args = tokenize(line);
