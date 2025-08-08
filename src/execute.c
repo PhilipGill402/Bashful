@@ -64,9 +64,15 @@ int launch(char** args){
         exit(EXIT_FAILURE);
     } else {
         //parent process
-        wait(&parent_status);
-
+        waitpid(pid, &parent_status, 0);
+        
+        if (!WIFEXITED(parent_status)){
+            fprintf(stderr, "shell failed to run %s command\n", args[0]);
+            return -1;
+        }
     }
+
+    return 1;
 }
 
 int execute(char** args){
