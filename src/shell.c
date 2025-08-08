@@ -6,6 +6,7 @@ int main(){
     int status;
     do{
         char cwd[100];
+        chdir(""); 
         printf("%s >> ", getcwd(cwd, 100));
         line = read_line();
         args = tokenize(line);
